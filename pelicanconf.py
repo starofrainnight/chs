@@ -29,6 +29,12 @@ LINKS = (
 # Social widget
 SOCIAL = ()
 
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tag_cloud"]
+
+# Fixed tag could size great differences
+TAG_CLOUD_STEPS = 1
+
 DEFAULT_PAGINATION = 10
 
 DEFAULT_METADATA = {
