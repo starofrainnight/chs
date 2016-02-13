@@ -35,6 +35,8 @@ PLUGINS = ["tag_cloud"]
 # Fixed tag could size great differences
 TAG_CLOUD_STEPS = 1
 
+DISQUS_SITENAME = "starofrainnightcht"
+
 DEFAULT_PAGINATION = 10
 
 DEFAULT_METADATA = {
