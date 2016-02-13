@@ -22,7 +22,9 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ("My English Blog", "/eng"),)
+    ("My English Blog", "/eng"),
+    ("My old Chinese Blog", "http://starofrainnight.blogspot.com"),
+    ("My old English Blog", "http://starofrainnight-eng.blogspot.com"),)
 
 # Social widget
 SOCIAL = ()
