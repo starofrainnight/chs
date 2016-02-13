@@ -21,7 +21,8 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = ()
+LINKS = (
+    ("My English Blog", "/eng"),)
 
 # Social widget
 SOCIAL = ()
