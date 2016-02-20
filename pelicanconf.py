@@ -24,8 +24,7 @@ AUTHOR_FEED_RSS = None
 # Blogroll
 LINKS = (
     ("My English Blog", "/eng"),
-    ("My old Chinese Blog", "http://starofrainnight.blogspot.com"),
-    ("My old English Blog", "http://starofrainnight-eng.blogspot.com"),)
+)
 
 # Social widget
 SOCIAL = ()
@@ -48,5 +47,3 @@ DEFAULT_METADATA = {
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-
-
