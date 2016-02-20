@@ -32,9 +32,6 @@ SOCIAL = ()
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud", "minify"]
 
-# Fixed tag could size great differences
-TAG_CLOUD_STEPS = 1
-
 DISQUS_SITENAME = "starofrainnightcht"
 
 DEFAULT_PAGINATION = 10
@@ -44,6 +41,8 @@ DISPLAY_CATEGORIES_ON_MENU = False
 DEFAULT_METADATA = {
     'status': 'draft',
 }
+
+TAG_CLOUD_SORTING = 'size'
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
