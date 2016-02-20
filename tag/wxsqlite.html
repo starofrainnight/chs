@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=en> <head><meta charset=utf-8><title>StarOfRainNight's Home - wxsqlite</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content><meta name=author content=starofrainnight><!-- Le styles --><link rel=stylesheet href=../theme/css/bootstrap.dark.css type=text/css><link rel=stylesheet href=../theme/css/bootstrap.dark.font-awesome-fake.css type=text/css><style type=text/css>
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      .tag-1 {
+        font-size: 16pt;
+      }
+      .tag-2 {
+        font-size: 14pt;
+      }
+      .tag-2 {
+        font-size: 12pt;
+      }
+      .tag-4 {
+        font-size: 10pt;
+     }
+
+    </style><link href=../theme/css/bootstrap-responsive.dark.css rel=stylesheet><link href=../theme/css/font-awesome-fake.css rel=stylesheet><link href=../theme/css/pygments.css rel=stylesheet><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><!-- Le fav and touch icons --><link rel="shortcut icon" href=../theme/images/favicon.ico><link rel=apple-touch-icon href=../theme/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=72x72 href=../theme/images/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=114x114 href=../theme/images/apple-touch-icon-114x114.png><link href=../ type=application/atom+xml rel=alternate title="StarOfRainNight's Home ATOM Feed"></head> <body> <div class="navbar navbar-fixed-top"> <div class=navbar-inner> <div class=container-fluid> <a class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </a> <a class=brand href=../index.html>StarOfRainNight's Home </a> <div class=nav-collapse> <ul class=nav> <li><a href=../pages/guan-yu.html>關於</a></li> <li class=divider-vertical></li> <ul class="nav pull-right"> <li><a href=../archives.html><i class=icon-th-list></i>Archives</a></li> </ul> </ul> <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>--> </div><!--/.nav-collapse --> </div> </div> </div> <div class=container-fluid> <div class=row> <div class=span9 id=content> <div class=article> <h1><a href=../mingw-xia-bian-yi-wxsqlite.html>MinGW 下 編譯 wxSQLite</a></h1> <div class="well small"><footer class=post-info> <span class=label>Date</span> <abbr class=published title=2008-06-23T15:44:00+08:00> <i class=icon-calendar></i>一 23 六月 2008 </abbr> <span class=label>By</span> <a href=../author/starofrainnight.html><i class=icon-user></i>starofrainnight</a> <span class=label>Category</span> <a href=../category/compilation.html><i class=icon-folder-open></i>compilation</a> <span class=label>Tags</span> <a href=../tag/wxsqlite.html><i class=icon-tag></i>wxsqlite</a> <a href=../tag/mingw.html><i class=icon-tag></i>mingw</a> </footer><!-- /.post-info --></div> <div class=summary><div class=section id=id1> <h2>初始條件</h2> <p>首先確定環境變量只有 Mingw 的路徑而沒有 msys 的路徑，因為使用 msys 編譯會有些問題。</p> </div> <div class=section id=makefile> <h2>修改 makefile</h2> <p>打開 wxsqlite3build 下的 makefile.gcc，設定你需要的條件，如若妳不需要加密模塊並且擁有自己的SQLite3源代碼目錄，妳可以設定 SQLITE3_DIR</p> </div> <div class=section id=id2> <h2>編譯</h2> <pre class=literal-block>
+make -f makefile.gcc clean
+make -f makefile.gcc
+</pre> </div> <a class="btn primary xsmall" href=../mingw-xia-bian-yi-wxsqlite.html>more ...</a> </div> </div> <hr> <section id=content class=body> <h1>Pages</h1> <li><a href=../pages/guan-yu.html>關於</a></li> </section> </div><!--/span--> <div class="span3 well sidebar-nav" id=sidebar> <ul class="nav nav-list"> <li class=nav-header><h4><i class=icon-external-link></i>blogroll</h4></li> <li><a href=/eng><i class=icon-external-link></i>My English Blog</a></li> <li class=nav-header><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li> <li> <a href=../category/compilation.html> <i class="icon-folder-open icon-large"></i>compilation </a> </li> <li> <a href=../category/development.html> <i class="icon-folder-open icon-large"></i>development </a> </li> <li> <a href=../category/scm.html> <i class="icon-folder-open icon-large"></i>SCM </a> </li> <li> <a href=../category/sheng-huo-dian-di.html> <i class="icon-folder-open icon-large"></i>生活點滴 </a> </li> <li> <a href=../category/technique.html> <i class="icon-folder-open icon-large"></i>technique </a> </li> <li class=nav-header><h4><i class="icon-tags icon-large"></i>Tags</h4></li> <li class=tag-4> <a href=../tag/svn.html> <i class="icon-tag icon-large"></i>svn </a> </li> <li class=tag-4> <a href=../tag/ubifs.html> <i class="icon-tag icon-large"></i>ubifs </a> </li> <li class=tag-4> <a href=../tag/sip.html> <i class="icon-tag icon-large"></i>sip </a> </li> <li class=tag-4> <a href=../tag/network.html> <i class="icon-tag icon-large"></i>network </a> </li> <li class=tag-4> <a href=../tag/freescale.html> <i class="icon-tag icon-large"></i>freescale </a> </li> <li class=tag-4> <a href=../tag/mingw.html> <i class="icon-tag icon-large"></i>mingw </a> </li> <li class=tag-4> <a href=../tag/rtp.html> <i class="icon-tag icon-large"></i>rtp </a> </li> <li class=tag-4> <a href=../tag/wxsqlite.html> <i class="icon-tag icon-large"></i>wxsqlite </a> </li> <li class=tag-4> <a href=../tag/tortoisesvn.html> <i class="icon-tag icon-large"></i>tortoisesvn </a> </li> <li class=tag-4> <a href=../tag/mx27.html> <i class="icon-tag icon-large"></i>mx27 </a> </li> <li class=tag-4> <a href=../tag/svk.html> <i class="icon-tag icon-large"></i>svk </a> </li> </ul> </div><!--/.well --> </div><!--/row--> <hr> <footer> <address id=about> Proudly powered by <a href=http://pelican.notmyidea.org/ >Pelican <i class=icon-external-link></i></a>, which takes great advantage of <a href=http://python.org>Python <i class=icon-external-link></i></a>. </address><!-- /#about --> <p>The theme is based on <a href=http://twitter.github.com/bootstrap/ >Bootstrap from Twitter <i class=icon-external-link></i></a>, and <a href=http://fortawesome.github.com/Font-Awesome/ >Font-Awesome <i class=icon-external-link></i></a>, thanks!</p> </footer> </div><!--/.fluid-container--> <script type=text/javascript>
+    var disqus_shortname = 'starofrainnightcht';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script> <!-- Le javascript --> <!-- Placed at the end of the document so the pages load faster --> <script src=../theme/js/jquery-1.7.2.min.js></script> <script src=../theme/js/bootstrap.min.js></script> </body> </html>
