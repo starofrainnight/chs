@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.github.io/cht/" rel="alternate"></link><link href="https://starofrainnight.github.io/cht/feeds/development.atom.xml" rel="self"></link><id>https://starofrainnight.github.io/cht/</id><updated>2012-10-11T11:37:00+08:00</updated><entry><title>ubifs 應用案例</title><link href="https://starofrainnight.github.io/cht/ubifs-ying-yong-an-li.html" rel="alternate"></link><updated>2012-10-11T11:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2012-10-11:cht/ubifs-ying-yong-an-li.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;環境&lt;/h2&gt;
+&lt;p&gt;CPU : Freescale MX27&lt;/p&gt;
+&lt;p&gt;NAND FLASH : Samsung K9F2G08U0B, 2Gbits = 256MB&lt;/p&gt;
+&lt;p&gt;操作系統: linux&lt;/p&gt;
+&lt;p&gt;內核版本: 2.6.27&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="linux"&gt;
+&lt;h2&gt;2&amp;nbsp;&amp;nbsp;&amp;nbsp;linux 編譯選項&lt;/h2&gt;
+&lt;div class="section" id="ubi"&gt;
+&lt;h3&gt;2.1&amp;nbsp;&amp;nbsp;&amp;nbsp;支持UBI&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+Device Drivers  ---&amp;gt;
+&amp;lt;*&amp;gt; Memory Technology Device (MTD) support  ---&amp;gt;
+    [*]   MTD partitioning support
+    &amp;lt;*&amp;gt;   NAND Device Support  ---&amp;gt;
+    UBI - Unsorted block images  ---&amp;gt;
+        &amp;lt;*&amp;gt; Enable UBI
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="ubifs"&gt;
+&lt;h3&gt;2.2&amp;nbsp;&amp;nbsp;&amp;nbsp;支持UBIFS 文件系統&lt;/h3&gt;
+&lt;pre class="literal-block"&gt;
+File systems  ---&amp;gt;
+Miscellaneous filesystems  ---&amp;gt;
+    &amp;lt;*&amp;gt; UBIFS file system support
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;3&amp;nbsp;&amp;nbsp;&amp;nbsp;linux 啟動命令行參數&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+noinitrd console=ttymxc0,115200 ubi.mtd=2 root=ubi0:rootfs rootfstype=ubifs rw ip=off init=/linuxrc video=imx-fb:Innolux-WVGA
+&lt;/pre&gt;
+&lt;p&gt;我們的flash 在內核裡被分為三個 mtd 區: bootloader, kernel, filesystem. 因此 ubi.mtd=2, 即選中第三個 mtd 分區作為 ubifs 根分區. 至於 ubi0:rootfs 則跟創建文件系統鏡像時的 *.cfg 有關.&lt;/p&gt;
+&lt;p&gt;需要注意的是, 很多 bootloader 會覆蓋 linux 本身的默認命令行參數, 所以, 如果存在這樣的 bootloader 就必須修改 bootloader 調用 linux 時的命令行參數! 否則 ubifs 完全不起作用.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;4&amp;nbsp;&amp;nbsp;&amp;nbsp;創建 ubifs 文件系統鏡像&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+mkfs.ubifs -m 2048 -e 129024 -c 992 -r filesystem_base filesystem_base.ubifs
+&lt;/pre&gt;
+&lt;p&gt;ubifs 文件系統鏡像不能直接寫入 flash, 需要再根據這個生成的 ubifs 格式的文件系統鏡像生成 ubi 鏡像才能直接寫入 flash .&lt;/p&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;參數 &amp;quot;-m&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;為 flash 分頁大小, 可從 nand flash 的 datasheet 得知. 有些 flash 的分頁會有附加空間, 如我們所使用的這個 flash 每個分頁就帶有 64 字節的附加空間(1), 附加空間不計入我們的 -m 參數中!&lt;/dd&gt;
+&lt;dt&gt;參數 &amp;quot;-e&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;把 128KiB 減去一個分頁(2048)大小, 則等於 129024. 如果加載 ubifs 出現類似以下的錯誤:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+UBIFS error (pid 1): validate_sb: LEB size mismatch: 131072 in superblock, 129024 real
+&lt;/pre&gt;
+&lt;p class="last"&gt;則以那個 real 值為準!&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;參數 &amp;quot;-c&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;最大邏輯刷寫塊數量, 似乎可以是任意數值, 只要不超過邏輯塊總數即可.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;5&amp;nbsp;&amp;nbsp;&amp;nbsp;創建 ubi 鏡像&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+ubinize -o ubi.img -m 2048 -p 128KiB -s 512 -O 512 ubiimage.cfg
+&lt;/pre&gt;
+&lt;dl class="docutils"&gt;
+&lt;dt&gt;參數 &amp;quot;-m&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;參考 4. 中的 &amp;quot;-m&amp;quot; 參數&lt;/dd&gt;
+&lt;dt&gt;參數 &amp;quot;-p&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;為一次性擦除塊的大小, 可從 nand flash 的 datasheet 得知. 附加空間不計在內.&lt;/dd&gt;
+&lt;dt&gt;參數 &amp;quot;-s&amp;quot;&lt;/dt&gt;
+&lt;dd&gt;&lt;p class="first"&gt;與 -O 必須一致, 分頁子頁大小, 似乎跟 flash 的分頁組成有關, 似乎我們所用的 flash 每一頁由4 個子分頁組成, 一個子分頁為 512. 當出現以下錯誤時:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+UBI error: validate_ec_hdr: bad VID header offset 2048, expected 512.
+&lt;/pre&gt;
+&lt;p class="last"&gt;則以 expected 值為準.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;其中 ubiimage.cfg 內容如下:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[ubifs]
+mode=ubi
+image=filesystem_base.ubifs
+vol_id=0
+vol_size=100MiB
+vol_type=dynamic
+vol_name=rootfs
+vol_flags=autoresize
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id5"&gt;
+&lt;h2&gt;6&amp;nbsp;&amp;nbsp;&amp;nbsp;燒寫並啟動&lt;/h2&gt;
+&lt;p&gt;把 5. 裡生成的 ubi.img 燒寫進板子, 啟動, 當出現類似以下信息時表示, ubifs 已經成功加載:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+UBI: attaching mtd2 to ubi0
+UBI: physical eraseblock size:   131072 bytes (128 KiB)
+UBI: logical eraseblock size:    129024 bytes
+UBI: smallest flash I/O unit:    2048
+UBI: sub-page size:              512
+UBI: VID header offset:          512 (aligned 512)
+UBI: data offset:                2048
+UBI: attached mtd2 to ubi0
+UBI: MTD device name:            &amp;quot;nand.rootfs&amp;quot;
+UBI: MTD device size:            123 MiB
+UBI: number of good PEBs:        985
+UBI: number of bad PEBs:         6
+UBI: max. allowed volumes:       128
+UBI: wear-leveling threshold:    4096
+UBI: number of internal volumes: 1
+UBI: number of user volumes:     1
+UBI: available PEBs:             0
+UBI: total number of reserved PEBs: 985
+UBI: number of PEBs reserved for bad PEB handling: 9
+UBI: max/mean erase counter: 1/0
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id6"&gt;
+&lt;h2&gt;7&amp;nbsp;&amp;nbsp;&amp;nbsp;註釋&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;附加空間可以使用也可以不用, 一般用於存儲文件系統的附帶信息.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id7"&gt;
+&lt;h2&gt;8&amp;nbsp;&amp;nbsp;&amp;nbsp;錯誤信息&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;UBIFS error (pid 1): validate_sb: LEB size mismatch: 131072 in superblock, 129024 real&lt;/p&gt;
+&lt;p&gt;參考 4. 參數 &amp;quot;-e&amp;quot;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UBI error: validate_ec_hdr: bad VID header offset 2048, expected 512.&lt;/p&gt;
+&lt;p&gt;參考 5. 參數 &amp;quot;-s&amp;quot;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UBI warning: ubi_io_read_ec_hdr: no EC header found at PEB 845, only 0xFF bytes&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+可忽略, 剛刷寫完的, 很多這種提示.&lt;/blockquote&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;VFS: Cannot open root device &amp;quot;ubi0:rootfs&amp;quot; or unknown-block(0,0 ...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+mtd分區不是 ubi 格式 或者 創建 ubi 鏡像時的 cfg 文件有誤.&lt;/blockquote&gt;
+&lt;/div&gt;
+</summary><category term="ubifs"></category><category term="freescale"></category><category term="mx27"></category></entry><entry><title>UDP下嘅實時音視頻傳輸機制</title><link href="https://starofrainnight.github.io/cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html" rel="alternate"></link><updated>2010-01-31T20:53:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2010-01-31:cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;經歷咗一兩年係項目當中嘅實時音視頻實踐, 覺得要實現好嘅實時音視頻傳輸實屬不易. 以下呢套UDP下嘅實現流程, 係血嘅經驗, 每一點都是來之不易.&lt;/p&gt;
+&lt;p&gt;全局要點: 視頻可跳, 但聲音不斷.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;發送方&lt;/h2&gt;
+&lt;ol class="loweralpha simple"&gt;
+&lt;li&gt;開始時, 編碼I幀, 發送&lt;/li&gt;
+&lt;li&gt;接著, 發P幀 ( 聲音與視頻編碼是不同的, 每次真實發送幀前, 讀取錄音緩沖區, 並打包 ), 發N個P幀後, 跳到 a&lt;/li&gt;
+&lt;li&gt;如果在發P幀過程中, 接收到對方發來的 &amp;quot;重發I 幀&amp;quot; 請求, 馬上放棄目前所編碼的幀(視頻幀,不是聲音幀), 跳轉到 a&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id3"&gt;
+&lt;h2&gt;接收方&lt;/h2&gt;
+&lt;ol class="loweralpha simple"&gt;
+&lt;li&gt;建立幀列表, 至少存儲3幀以上才開始播放, 使用順序插入法, 尋找相應幀序號的位置, 並插入.&lt;/li&gt;
+&lt;li&gt;播放開始時, 不停從幀列表中取得一幀(由於此時幀列表是順序的,故此取列表頭的那一幀即可), 如果是P幀時則放棄, 直到找到I幀才開始真正播放. 聲音幀不需要等I幀, 只要按著順序播放即可.&lt;/li&gt;
+&lt;li&gt;播放過程中, 不停從幀列表中取得一幀進行播放( 聲音播放與視頻播放線程需要分開!!切記! )&lt;/li&gt;
+&lt;li&gt;當視頻播放線程發現聲音播放的幀號大於正要播放的視頻2幀以上時, 馬上放棄當前播放的視頻, 並請求對方 &amp;quot;重發I幀&amp;quot;, 並一直讀取到幀緩沖列表中大於等於音頻幀號的視頻 &amp;quot;I&amp;quot; 幀為止, 再播放 ( 此處是解決音視頻不同步的情況, 即視頻慢於音頻並隨時間累積 )&lt;/li&gt;
+&lt;li&gt;如果在 c 當中, 發現掉幀了( 要播放的幀號不等於上一次播放的幀號 +1 ), 請求對方 &amp;quot;重發I幀&amp;quot;, 並等待下一個 &amp;quot;I幀&amp;quot; (針對的是視頻幀, 音頻幀只要是大於上一次播放的幀號即可以播放 )&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id4"&gt;
+&lt;h2&gt;注意&lt;/h2&gt;
+&lt;p&gt;上面缺了任何一點, 都會導致播放出現問題！&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="network"></category><category term="sip"></category><category term="rtp"></category></entry><entry><title>偽IP如何實現與客戶機進行TCP通訊？</title><link href="https://starofrainnight.github.io/cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html" rel="alternate"></link><updated>2008-04-05T11:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.github.io,2008-04-05:cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+&lt;h2&gt;軟件環境&lt;/h2&gt;
+&lt;p&gt;WinXP SP2&lt;/p&gt;
+&lt;p&gt;截取數據包的Ndis5.0驅動已經寫好。
+在用戶層，能夠修改驅動發來的數據包的IP地址，客戶機也能接收到該數據包。&lt;/p&gt;
+&lt;p&gt;我這個軟件是用于模擬多客戶機與服務器連接實現數據傳輸的測試軟件。&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="id2"&gt;
+&lt;h2&gt;硬件環境&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+(33.33.33.33(假定是這個))　　     　 |—— 客戶機2 (192.168.1.105)
+客戶機１——路由 (192.168.1.1)——|
+   　　　　　　　　　　　　　　　 |—— 發送機 (192.168.1.100) （偽裝 99.99.99.99）
+&lt;/pre&gt;
+&lt;p&gt;現在需要發送機偽裝IP 99.99.99.99 與兩客戶機進行TCP通信&lt;/p&gt;
+&lt;p&gt;在客戶機2安裝的Ethereal 檢測到發送機發來的IP為 99.99.99.99 數據包，物理地址（MAC）也為發送機的物理地址。&lt;/p&gt;
+&lt;p&gt;但 問題是，當客戶機2接收到第一次TCP握手包后，它返回的響應包雖然目的IP地址仍然是99.99.99.99，但物理地址卻是網關 192.168.1.1的物理地址！我再查看客戶機2的數據包，發現在它接收到發送機發送的握手包時，它先發送ARP數據包查詢了網關 （192.168.1.1）的物理地址再發到網關。也就是說，當客戶機發現接收的數據包IP與自己不在同一子域則自動把數據包發往網關，但現在問題是由于 發送的物理地址改變了，網關只能查詢正確的99.99.99.99的物理地址，那這時候，數據包也就不能再返回偽裝的發送機上了。于是TCP連接被逼中 斷。&lt;/p&gt;
+&lt;p&gt;而且，兩客戶機均開啟了防火牆，不能使用ICMP實現數據包路徑轉移。&lt;/p&gt;
+&lt;p&gt;我嘗試發送ARP包去修改客戶機2的ARP緩沖，但沒用，不同一子域的IP地址不會受到緩沖，結果IP包依然發往網關。&lt;/p&gt;
+&lt;p&gt;有何方法可以實現發送機與兩客戶機用偽IP通信？鬱悶中……&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="ndis"></category></entry></feed>
