@@ -3,7 +3,7 @@
 	url = git@github.com:starofrainnight/pelican-theme-bootstrap2-dark.git
 [submodule "content"]
 	path = content
-	url = ssh://git@10.9.0.50:10022/starofrainnight/articles-cht.git
+	url = ssh://git@10.9.0.50:10122/starofrainnight/articles-cht.git
 [submodule "plugins"]
 	path = plugins
 	url = git://github.com/getpelican/pelican-plugins.git
