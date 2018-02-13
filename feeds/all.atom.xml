@@ -1,12 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.club/cht/" rel="alternate"></link><link href="https://starofrainnight.club/cht/feeds/all.atom.xml" rel="self"></link><id>https://starofrainnight.club/cht/</id><updated>2016-10-23T21:31:00+08:00</updated><entry><title>新的開始</title><link href="https://starofrainnight.club/cht/xin-de-kai-shi.html" rel="alternate"></link><updated>2016-10-23T21:31:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-10-23:cht/xin-de-kai-shi.html</id><summary type="html">&lt;p&gt;忙了好一陣子搞房子的事情，終於整頓完房子。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.club/chs/" rel="alternate"></link><link href="https://starofrainnight.club/chs/feeds/all.atom.xml" rel="self"></link><id>https://starofrainnight.club/chs/</id><updated>2017-11-12T08:01:00+08:00</updated><entry><title>大战小米电视之无限广告</title><link href="https://starofrainnight.club/chs/da-zhan-xiao-mi-dian-shi-zhi-wu-xian-yan-gao.html" rel="alternate"></link><updated>2017-11-12T08:01:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2017-11-12:chs/da-zhan-xiao-mi-dian-shi-zhi-wu-xian-yan-gao.html</id><summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;一年前，冲着小米的品牌，在京东买了台小米电视3S，型号 L43M3-AA，43英寸 ，1899元，之后这一年感觉自己就一纯傻B。
+刚买回来的时候，电视还好好的，用起来也不卡，没广告。
+电视还时不时更新软件，开始还感觉挺不错的，电视的售后服务还不错嘛。然后只要有更新就更新一下，看一看修复了什么问题，后来发现真是好奇心害死猫啊～～
+随着某一天升级到 1.2.x 版本之后，突然出现开机广告，接着进入各应用之间时不时也会弹广告。开始时，开机广告也就几秒，桌面广告也就是在那里滚动而已，而应用之间的广告也还没频繁到让我真正动心去研究如何去广告。接着，随着系统更新，开机广告越播越长了，后来居然达到30多秒，只能在最后5秒才能退出！小米这是穷疯了？！这电视我是给钱买的好吧？我买的是广告机？！而电视也越来越卡了，广告越来越多，到后来升到 1.3.x 之后，我才彻底对小米绝望了，本来想升到新的大版本应该会对电视优化一下，广告有我也忍了，但不能卡啊。如果说 1.2.x 的卡是卡到翔到了直肠了，那1.3.x 的卡慢是直接把翔卡到爆出来了……于是开启了漫长的跟这无穷无尽的广告作战之旅……如果你不想看期间的曲折经历，可直接跳到最后看最终解决方案一节。&lt;/p&gt;
+&lt;h1&gt;首战&lt;/h1&gt;
+&lt;p&gt;在网上搜索了一下小米电视的广告去除方面的资料，发现已经是文章遍地了。可见我这可是后知后觉，没做好万全的调查研究准备就剁手之过啊。
+首先，恢复到 1.2.x 版本，因为 1.3.x 版本之后桌面变得异常大气华丽（资源占用大），动态内容完全没法关，这个基础版本就存在问题。所以决定先恢复 1.2.X 版本。好在小米电视还是提供了降级操作的，但记得在升级首次升级到 1.3.x 时就不要往后升级了，小米的降级操作只提供最近的一次的版本降级，所以这点需要注意的。反正我是降到 1.2.37 版本了。
+然后禁止更新，以后就不用小米操心的我桌面了，我的电视我作主！
+最后安装360套餐把电视机 root 了，再删除所有看上去不正常的软件及插件。&lt;/p&gt;
+&lt;h1&gt;终战&lt;/h1&gt;
+&lt;p&gt;以为上面这样就结束了？OH，it's too naive！在上面的清理操作完成之后，我是享受了几天清静日子，但隔了一段时间，不知道是半个月还是多少，然后电视又开始播放广告了！然后那些删除掉的程序、广告应用逐渐恢复过来，然后我明白了，上面这样清理之后仅仅只是把那些东西删除而已。小米电视还有些后台程序在那里隐藏着，只要你连上网络，它就会不停地恢复删除的广告应用等。本来我已经差不多要放弃治疗了，想算了吧，不折腾了，没这时间去跟它耗，然而……这周以来它变本加厉了，界面操作越来越卡，遥控器反应越来越慢，有时甚至按好多下，才能开机，开始我还以为是遥控器没电了，换了电池都没用才意识到可能是电视本身的问题。而昨晚本地视频只要播放一阵子之后，遥控就无法操作，一操作就彻底死机（调音量）！结果一部片子看20分钟重启电视4次，这已经是逼到底线了！！不得不撸起袖子干它娘的！
+花了几小时研究了一下，删除系统应用简单，问题是，不让它恢复才是重点。怎么办呢？漫无目的之下，查看了360卫士的功能，发现它有一个“软件联网管理功能”，灵机一动，哈，这不正是我所需要的东西吗？既然系统会恢复相应的应用，它必须要重新下载，只要把整个系统的联网都屏蔽了，只保留需要的应用联网功能，这不好了吗？于是最终方案出炉！&lt;/p&gt;
+&lt;h1&gt;最终解决方案&lt;/h1&gt;
+&lt;h2&gt;恢复到 1.2.x&lt;/h2&gt;
+&lt;h3&gt;降级&lt;/h3&gt;
+&lt;p&gt;在 "设置" -&amp;gt; "通用设置" -&amp;gt; "还原" 进行恢复操作。
+注意：此操作仅在你第一次更新到 1.3.x 版本之后并且没有继续进行更新的前题下才能进行。如果你已经在更新到 1.3.x 之后进行了多次更新，那就得另想办法刷机了。&lt;/p&gt;
+&lt;h3&gt;禁止更新&lt;/h3&gt;
+&lt;p&gt;在 "设置" -&amp;gt; "关于" -&amp;gt; "系统更新" -&amp;gt; "智能更新" 设置为 "关闭"&lt;/p&gt;
+&lt;h2&gt;使用360套餐禁用软件&lt;/h2&gt;
+&lt;p&gt;你可以找其它的同类产品，使用360主要考虑其本身作为流氓软件的宗师级人马对付流氓行径还是有一套的（以毒攻毒？），而且工具齐全。&lt;/p&gt;
+&lt;h3&gt;准备&lt;/h3&gt;
+&lt;p&gt;找一个 USB 鼠标，插到电视上，因为 360 这些软件可不是标准的电视应用，用那遥控器可操作不了。然后按顺便从PC机下载以下 Android 应用，并通过U盘安装到电视上：
+&lt;em&gt; &lt;a href="http://root.360.cn/"&gt;360一键ROOT&lt;/a&gt;
+&lt;/em&gt; &lt;a href="http://geek.360.cn/"&gt;360卫士极客版&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;360一键ROOT&lt;/h3&gt;
+&lt;p&gt;先 root 了小米电视，不 root，啥也动不了，特别是那些恶劣的自带应用。&lt;/p&gt;
+&lt;h3&gt;360卫士极客版&lt;/h3&gt;
+&lt;p&gt;极客版比原版资源占用要少很多。
+1. 通过自启管理功能把除了360以外的软件自启行为全禁止掉
+1. 通过 "流量监控" -&amp;gt; "软件联网管理" 功能把所有软件的移动数据及wifi 选项全设置为 "禁止"，仅打开你明确需要联网的特定应用，例如 UPNP 服务、优酷、奇异果之类。
+1. 把不需要的应用、广告软件、广告插件、系统附带无用文件删除。&lt;/p&gt;
+&lt;h2&gt;可删除应用列表&lt;/h2&gt;
+&lt;p&gt;以下是我删除的应用列表，为了精简和优化速度甚至删除了些主要功能，你可以针对性选择自己需要删除的应用。当然这里面的应用还不全的，因为有些应用属于非系统应用，删除后我也不记得有哪些了，自己判断或者上网搜索一下它们的功能再决定。&lt;/p&gt;
+&lt;h3&gt;广告类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;StandbyCover [开机广告]&lt;/li&gt;
+&lt;li&gt;msa [点二级栏目时播放广告]&lt;/li&gt;
+&lt;li&gt;TVPushService&lt;/li&gt;
+&lt;li&gt;com.xiaomi.mibox.lockscreen [锁屏类]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;小米服务&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;应用商店&lt;/li&gt;
+&lt;li&gt;电视活动中心&lt;/li&gt;
+&lt;li&gt;小米服务安全插件&lt;/li&gt;
+&lt;li&gt;小米电视手册&lt;/li&gt;
+&lt;li&gt;米家&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;系统应用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;日历&lt;/li&gt;
+&lt;li&gt;时钟&lt;/li&gt;
+&lt;li&gt;图库&lt;/li&gt;
+&lt;li&gt;天气&lt;/li&gt;
+&lt;li&gt;时尚画报&lt;/li&gt;
+&lt;li&gt;网络电台&lt;/li&gt;
+&lt;li&gt;音乐&lt;/li&gt;
+&lt;li&gt;搜索&lt;/li&gt;
+&lt;li&gt;基本互动屏保&lt;/li&gt;
+&lt;li&gt;日历存储&lt;/li&gt;
+&lt;li&gt;VoiceControl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;其它类型&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;电视管家&lt;/li&gt;
+&lt;li&gt;猎豹清理大师&lt;/li&gt;
+&lt;li&gt;远程下载 [如果你没有离线下载需求可删除]&lt;/li&gt;
+&lt;li&gt;电视相册&lt;/li&gt;
+&lt;li&gt;游戏中心&lt;/li&gt;
+&lt;li&gt;百度电视云&lt;/li&gt;
+&lt;li&gt;Cheetah Mobile CleanMaster SDK&lt;/li&gt;
+&lt;li&gt;多屏互动&lt;/li&gt;
+&lt;li&gt;搜狗输入法&lt;/li&gt;
+&lt;li&gt;百度输入法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;后记&lt;/h1&gt;
+&lt;p&gt;现在电视已经非常之流畅，遥控器也恢复正常，看视频也不再会导致遥控卡死，所有广告都不再出现了。
+在网上搜索了一下智能电视相关的文章，其实不单是小米一家，智能电视大多如此，就好像我们的电视机顶盒一样，看个电视先让你经过几屏广告页，搞得就好像用户没给钱一样。现在已经是全民广告时代，消费者的权利已经被漠视得一文不值，即使付费，广告依然无孔不入。啥时候我们能有在 youtube 上免费看视频的体验：即使有广告，但这广告是可以选择不看的，而不会强迫你先看60秒广告再让你看视频，在国内即使付费都无法完全避免被强迫看广告啊……
+经此一役，以后再也不敢买智能电视了，宁愿买个普通的电视屏再自己搭台微型 PC 折腾个家庭影院进行播放。在消费者的权益得不到保护的前题下，只能用脚投票了，让喜欢看广告的人继续看广告，让我们这些不喜欢看广告，宁愿付费去广告却不得的人得到安宁。&lt;/p&gt;
+&lt;h1&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;https://www.zhihu.com/question/54992021&lt;/p&gt;</summary></entry><entry><title>誰會記得那只死掉的老鬆鼠?</title><link href="https://starofrainnight.club/chs/shui-hui-ji-de-na-zhi-si-diao-de-lao-song-shu.html" rel="alternate"></link><updated>2017-07-25T21:49:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2017-07-25:chs/shui-hui-ji-de-na-zhi-si-diao-de-lao-song-shu.html</id><summary type="html"></summary></entry><entry><title>新的開始</title><link href="https://starofrainnight.club/chs/xin-de-kai-shi.html" rel="alternate"></link><updated>2016-10-23T21:31:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-10-23:chs/xin-de-kai-shi.html</id><summary type="html">&lt;p&gt;忙了好一陣子搞房子的事情，終於整頓完房子。&lt;/p&gt;
 &lt;p&gt;休息了兩個月，下個月要開始新的生活，再次起航，人生歸零。&lt;/p&gt;
 &lt;p&gt;比起以往，現在的我強大了許多許多，如果說以前歸零，雖然有勇氣去歸零，但始終內心總有那麼一絲恐懼與迷茫，但現在的我，這一絲恐懼和迷茫已經不復存在。&lt;/p&gt;
 &lt;p&gt;新的開始，新的生活，希望這一次是我最後一次歸零，最後的終點。&lt;/p&gt;
-</summary></entry><entry><title>焦燥的一天</title><link href="https://starofrainnight.club/cht/jiao-zao-de-yi-tian.html" rel="alternate"></link><updated>2016-07-25T14:18:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-07-25:cht/jiao-zao-de-yi-tian.html</id><summary type="html">&lt;p&gt;不知道為什麼，今天總是感覺很煩悶，想吐。想睡，又睡不著。很焦燥~~&lt;/p&gt;
+</summary></entry><entry><title>焦燥的一天</title><link href="https://starofrainnight.club/chs/jiao-zao-de-yi-tian.html" rel="alternate"></link><updated>2016-07-25T14:18:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-07-25:chs/jiao-zao-de-yi-tian.html</id><summary type="html">&lt;p&gt;不知道為什麼，今天總是感覺很煩悶，想吐。想睡，又睡不著。很焦燥~~&lt;/p&gt;
 &lt;p&gt;天氣問題？或者是因為這個周過去，我就要重新審視自己未來的道路了？&lt;/p&gt;
 &lt;p&gt;新的開始總是令人感覺興奮與激動，但開始前的這段日子沉悶得不想方語。&lt;/p&gt;
-</summary></entry><entry><title>窮人的理財</title><link href="https://starofrainnight.club/cht/qiong-ren-de-li-cai.html" rel="alternate"></link><updated>2016-05-21T14:21:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-05-21:cht/qiong-ren-de-li-cai.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary></entry><entry><title>窮人的理財</title><link href="https://starofrainnight.club/chs/qiong-ren-de-li-cai.html" rel="alternate"></link><updated>2016-05-21T14:21:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-05-21:chs/qiong-ren-de-li-cai.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;跟身邊的親戚朋友談過理財時，經常會碰到對方回答：“根本無財可理，哪來的理財？理財是有錢人的事！”&lt;/p&gt;
 &lt;p&gt;這是關於理財上的誤區，事實上，財富達到一定程度，實現財務自由之後，理財手段無論多拙劣，其財富增長依然比不懂理財的人財富增長得快，因為其基數足夠大。&lt;/p&gt;
@@ -109,11 +191,11 @@
 &lt;p&gt;錢賺錢是四條腿，而人賺錢是兩條腿，讓財富自身不停增長並讓自身最終達到財務自由是理財的最終目的。&lt;/p&gt;
 &lt;p&gt;理財的核心是遵守紀律，因爲窮人的理財注定需要用漫長的時間換取資本的成長，那麼堅定地執行既定的計劃才能最終實現財務自由，否則三天打漁兩天曬網只能一場空。&lt;/p&gt;
 &lt;/div&gt;
-</summary></entry><entry><title>沒有改變世界的夢想，哪裏有偉大的項目？</title><link href="https://starofrainnight.club/cht/mei-you-gai-bian-shi-jie-de-meng-xiang-na-li-you-wei-da-de-xiang-mu.html" rel="alternate"></link><updated>2016-03-21T20:47:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-03-21:cht/mei-you-gai-bian-shi-jie-de-meng-xiang-na-li-you-wei-da-de-xiang-mu.html</id><summary type="html"></summary></entry><entry><title>誰會記得那只死掉的老鬆鼠?</title><link href="https://starofrainnight.club/cht/shui-hui-ji-de-na-zhi-si-diao-de-lao-song-shu.html" rel="alternate"></link><updated>2016-03-21T20:47:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-03-21:cht/shui-hui-ji-de-na-zhi-si-diao-de-lao-song-shu.html</id><summary type="html"></summary></entry><entry><title>重寫博客</title><link href="https://starofrainnight.club/cht/zhong-xie-bo-ke.html" rel="alternate"></link><updated>2016-02-13T10:17:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-02-13:cht/zhong-xie-bo-ke.html</id><summary type="html">&lt;p&gt;很久沒寫博客了，上一次寫博客已經是2012年的事情了。在這些年以來，諸事繁忙，加之 blogspot 的編輯器並不便於編寫，而且在 blogspot 上編寫博客也不便於整理自己的文章及進行版本管理。&lt;/p&gt;
+</summary></entry><entry><title>沒有改變世界的夢想，哪裏有偉大的項目？</title><link href="https://starofrainnight.club/chs/mei-you-gai-bian-shi-jie-de-meng-xiang-na-li-you-wei-da-de-xiang-mu.html" rel="alternate"></link><updated>2016-03-21T20:47:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-03-21:chs/mei-you-gai-bian-shi-jie-de-meng-xiang-na-li-you-wei-da-de-xiang-mu.html</id><summary type="html"></summary></entry><entry><title>重寫博客</title><link href="https://starofrainnight.club/chs/zhong-xie-bo-ke.html" rel="alternate"></link><updated>2016-02-13T10:17:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2016-02-13:chs/zhong-xie-bo-ke.html</id><summary type="html">&lt;p&gt;很久沒寫博客了，上一次寫博客已經是2012年的事情了。在這些年以來，諸事繁忙，加之 blogspot 的編輯器並不便於編寫，而且在 blogspot 上編寫博客也不便於整理自己的文章及進行版本管理。&lt;/p&gt;
 &lt;p&gt;幾年過去，隨着技術的發展，基於 github 等源代碼管理工具之上的靜態博客也出現了，發現這類型靜態博客非常便於編寫及進行版本管理，重燃起編寫博客的興趣。&lt;/p&gt;
 &lt;p&gt;經過比較，最後選擇了 pelican 作爲我的靜態博客的生成及管理工具。&lt;/p&gt;
 &lt;p&gt;接下來，慢慢把我原來博客的內容遷移過來。&lt;/p&gt;
-</summary></entry><entry><title>ubifs 應用案例</title><link href="https://starofrainnight.club/cht/ubifs-ying-yong-an-li.html" rel="alternate"></link><updated>2012-10-11T11:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2012-10-11:cht/ubifs-ying-yong-an-li.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary></entry><entry><title>ubifs 應用案例</title><link href="https://starofrainnight.club/chs/ubifs-ying-yong-an-li.html" rel="alternate"></link><updated>2012-10-11T11:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2012-10-11:chs/ubifs-ying-yong-an-li.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;環境&lt;/h2&gt;
 &lt;p&gt;CPU : Freescale MX27&lt;/p&gt;
 &lt;p&gt;NAND FLASH : Samsung K9F2G08U0B, 2Gbits = 256MB&lt;/p&gt;
@@ -252,7 +334,7 @@ UBI: max/mean erase counter: 1/0
 &lt;blockquote&gt;
 mtd分區不是 ubi 格式 或者 創建 ubi 鏡像時的 cfg 文件有誤.&lt;/blockquote&gt;
 &lt;/div&gt;
-</summary><category term="ubifs"></category><category term="freescale"></category><category term="mx27"></category></entry><entry><title>UDP下嘅實時音視頻傳輸機制</title><link href="https://starofrainnight.club/cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html" rel="alternate"></link><updated>2010-01-31T20:53:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-31:cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="ubifs"></category><category term="freescale"></category><category term="mx27"></category></entry><entry><title>UDP下嘅實時音視頻傳輸機制</title><link href="https://starofrainnight.club/chs/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html" rel="alternate"></link><updated>2010-01-31T20:53:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-31:chs/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;經歷咗一兩年係項目當中嘅實時音視頻實踐, 覺得要實現好嘅實時音視頻傳輸實屬不易. 以下呢套UDP下嘅實現流程, 係血嘅經驗, 每一點都是來之不易.&lt;/p&gt;
 &lt;p&gt;全局要點: 視頻可跳, 但聲音不斷.&lt;/p&gt;
@@ -279,29 +361,29 @@ mtd分區不是 ubi 格式 或者 創建 ubi 鏡像時的 cfg 文件有誤.&lt;/
 &lt;h2&gt;注意&lt;/h2&gt;
 &lt;p&gt;上面缺了任何一點, 都會導致播放出現問題！&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="network"></category><category term="sip"></category><category term="rtp"></category></entry><entry><title>班得瑞(Bandari)</title><link href="https://starofrainnight.club/cht/ban-de-rui-bandari.html" rel="alternate"></link><updated>2010-01-21T21:18:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-21:cht/ban-de-rui-bandari.html</id><summary type="html">&lt;p&gt;最近先至發現原來有十幾首好好聽嘅歌，原來喺屬於 Bandari 兩個專輯嘅音樂。再搜索咗一下呢個樂隊嘅信息，好似幾有意思甘，似乎眾說紛紜，有人話呢個樂隊係假嘅，亦有人話呢個樂隊衹係平時好低調，仲有人話 Bandari 係瑞士唱片公司 Audio Video Communications AG（簡稱AVC）嘅產品，似乎最後一種講法比較靠譜，上他們的主頁可以揾到 Bandari 嘅專輯。&lt;/p&gt;
+</summary><category term="network"></category><category term="sip"></category><category term="rtp"></category></entry><entry><title>班得瑞(Bandari)</title><link href="https://starofrainnight.club/chs/ban-de-rui-bandari.html" rel="alternate"></link><updated>2010-01-21T21:18:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-21:chs/ban-de-rui-bandari.html</id><summary type="html">&lt;p&gt;最近先至發現原來有十幾首好好聽嘅歌，原來喺屬於 Bandari 兩個專輯嘅音樂。再搜索咗一下呢個樂隊嘅信息，好似幾有意思甘，似乎眾說紛紜，有人話呢個樂隊係假嘅，亦有人話呢個樂隊衹係平時好低調，仲有人話 Bandari 係瑞士唱片公司 Audio Video Communications AG（簡稱AVC）嘅產品，似乎最後一種講法比較靠譜，上他們的主頁可以揾到 Bandari 嘅專輯。&lt;/p&gt;
 &lt;p&gt;似乎 Bandari 華人區更受歡迎，試下係Google搜索一下就知道，如果查英文，基本揾唔到真正同 Bandari 專輯有關嘅信息，但搜索中文網頁就一大堆。&lt;/p&gt;
 &lt;p&gt;但無關系啦，只要好聽就得~~話知佢係假定系真啦~~&lt;/p&gt;
-</summary></entry><entry><title>終於可以用Google音樂下載啦~~</title><link href="https://starofrainnight.club/cht/zhong-yu-ke-yi-yong-googleyin-le-xia-zai-la.html" rel="alternate"></link><updated>2009-04-09T12:22:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-04-09:cht/zhong-yu-ke-yi-yong-googleyin-le-xia-zai-la.html</id><summary type="html">&lt;p&gt;前一排，聽講Google可以免費下載正版音樂，好開心，於是上Google，發現真係有Google音樂下載！但呢個試聽同下載服務僅對中國大陸境內提供。&lt;/p&gt;
+</summary></entry><entry><title>終於可以用Google音樂下載啦~~</title><link href="https://starofrainnight.club/chs/zhong-yu-ke-yi-yong-googleyin-le-xia-zai-la.html" rel="alternate"></link><updated>2009-04-09T12:22:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-04-09:chs/zhong-yu-ke-yi-yong-googleyin-le-xia-zai-la.html</id><summary type="html">&lt;p&gt;前一排，聽講Google可以免費下載正版音樂，好開心，於是上Google，發現真係有Google音樂下載！但呢個試聽同下載服務僅對中國大陸境內提供。&lt;/p&gt;
 &lt;p&gt;但係好失望，我一點下載就彈出個網頁話 “403 forbidden”，頂！我本來就係大陸境內，冇理由唔得咖？！開始我以為係瀏覽器嘅安全選項問題，於是我將D防火牆啊、安全選項啊全部關晒，但係都唔得，搞左幾日，上網抄左幾日都冇見到有講呢個問題，無法子啦，只好唔搞~~&lt;/p&gt;
 &lt;p&gt;後尾翻到公司，啱好見到個同事用Google音樂聽緊歌，我以為係公司可以，於是嗱嗱臨開機試下，點知又係唔得，甘就出奇啦，我地公司係用一個IP出口嘅，冇理由，佢得我唔得咖？！於是我比較左下我台機同同事台機有乜唔同，比較之下先發現，佢個DNS同我個DNS唔一樣，改左個DNS之後，掂晒！！終於可以下載啦！&lt;/p&gt;
 &lt;p&gt;因為我用開嘅係 OpenDNS，所以所有我用嘅機都會設置個DNS為OpenDNS 嘅地址，估計係中國境內 Google 音樂下載網址解釋僅對中國境內DNS有效，所以在國際DNS服務器內解釋呢個地址到其它位置，於是通過OpenDNS解釋到其它嘅IP導致出現 forbidden 嘅現象。&lt;/p&gt;
-</summary></entry><entry><title>點解要點解?</title><link href="https://starofrainnight.club/cht/dian-jie-yao-dian-jie.html" rel="alternate"></link><updated>2009-04-05T10:05:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-04-05:cht/dian-jie-yao-dian-jie.html</id><summary type="html">&lt;p&gt;　　記得係大學果陣，有一次有個課程設計要做一個C語言嘅詞法解釋器。&lt;/p&gt;
+</summary></entry><entry><title>點解要點解?</title><link href="https://starofrainnight.club/chs/dian-jie-yao-dian-jie.html" rel="alternate"></link><updated>2009-04-05T10:05:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-04-05:chs/dian-jie-yao-dian-jie.html</id><summary type="html">&lt;p&gt;　　記得係大學果陣，有一次有個課程設計要做一個C語言嘅詞法解釋器。&lt;/p&gt;
 &lt;p&gt;　　果陣起左個念頭想做一個通用嘅語言編譯器，即係一個萬能既語言編譯器，類似於C語言編譯器、Pascal編譯器等等，但係唔需要硬性為每個語言寫程式（GCC就係呢類型嘅實作），只需要寫一個簡單嘅詞法語法配置文本文檔即可以支持編譯出不同平台嘅程式（二進制文件格式）。&lt;/p&gt;
 &lt;p&gt;　　後來同老師講左下自己嘅諗法同埋一D唔成熟嘅思路，同埋打算用幾十年時間嚟做呢樣嘢。&lt;/p&gt;
 &lt;p&gt;　　老師同我講（大概意思）：「呢種編譯器到目前都未出現，起碼證明呢樣嘢難度好高或者幾乎唔可能實現，點解要做呢D無用功呢？何況你做咗出嚟，佢又有乜價值呢？又有乜市場呢？何況做通用嘅編譯器你嘅編譯速度就自然比特定嘅編譯器速度慢，甘你呢個編譯器又有乜用呢？」&lt;/p&gt;
 &lt;p&gt;　　聽到老師甘講，有D愕然，講真啦，老師講得係啱，但係……我只係想做呢樣嘢，無話想攞佢嚟用，只係想做，點解一定要有用、一定要有價值、一定要有市場啫？就好似細路嘅玩具咁，只係因為有興趣，想玩就玩啫，當時亦係甘回答嘅。&lt;/p&gt;
 &lt;p&gt;　　人嘅一生，短短百年，雖則現實一分錢可以逼死英雄漢，但我覺得人一世物一世，樣樣事情都講錢、講有用、講意義未免太無意思啦，更有意思嘅事情例如靜靜的聽一首歌、諗辦法實現一個自己諗法嘅程式、嘗試一個月坐看夕陽西下、學習一下道家無為之法……人死如燈滅，生前嘅一切名聲、金錢、榮譽、利欲終將歸於塵土，千百年後或許無人知道你、或許有人知道你，又如何？一切不過碌碌，重不如趁住生命尚存做D自己鍾意嘅事情。遊戲人間亦係個唔錯的人生態度。&lt;/p&gt;
 &lt;p&gt;　　好彩一直堅持自己選擇自己嘅道路，而家做嘅係自己喜歡嘅編程工作，雖然唔係做自己最鍾意嘅遊戲引擎，但只要係寫程式我就好開心啦，何況而家通常寫嘅系嵌入式程式同埋驅動程式，都系自己鍾意做嘅部分，而家好開心~~~&lt;/p&gt;
-</summary></entry><entry><title>Linux or ReactOS ?</title><link href="https://starofrainnight.club/cht/linux-or-reactos.html" rel="alternate"></link><updated>2009-02-09T01:12:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-02-09:cht/linux-or-reactos.html</id><summary type="html">&lt;p&gt;　　用左 Linux 嚟做開發有一段時間，慢慢發覺，Linux 原來面對嘅用戶群應該喺程式撰寫員先至啱 =_=b&lt;/p&gt;
+</summary></entry><entry><title>Linux or ReactOS ?</title><link href="https://starofrainnight.club/chs/linux-or-reactos.html" rel="alternate"></link><updated>2009-02-09T01:12:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2009-02-09:chs/linux-or-reactos.html</id><summary type="html">&lt;p&gt;　　用左 Linux 嚟做開發有一段時間，慢慢發覺，Linux 原來面對嘅用戶群應該喺程式撰寫員先至啱 =_=b&lt;/p&gt;
 &lt;p&gt;　　剛開始用 Ubuntu 時，諗住佢好似 Windows 咁樣好容易上手嘅，點知到喺使用嘅過程中遇到好多奇奇怪怪嘅問題，Google 之後，先知道又翻到石器時代，大多數問題唔可以通過 GUI 嚟解決，基本上呢D問題都要直接喺命令行底下解決，或者需要從某D源代碼重新編譯安裝，慢慢咁，到最後，習慣左連GUI都唔用，只用命令行。講真啦，都喺鍾意乜嘢都用鼠標喺各個GUI裡面跳來跳去呢種直觀嘅方式嚟解決問題 -_-|||&lt;/p&gt;
 &lt;p&gt;　　直到上年年尾，發現左一個好玩嘅 OS —— ReactOS，佢哋既目標似乎喺要做一個開源板嘅 Windows NT 內核 OS！哇哈哈，全部繼承左 Windows 系列嘅操作方式，而且完全兼容 Windows NT 及以上 OS 嘅軟體同埋驅動程式！！特別喺驅動程式，雖然話有唔少硬體開始有 Linux 嘅驅動程式并且有成班人喺喥開發支持舊硬體嘅驅動程式，但仲喺有唔少廠商為左方便只開發 Windows 平台嘅驅動程式，咁樣如果你買左果D硬體，你焗住只能喺 Windows 下用啦。&lt;/p&gt;
 &lt;p&gt;　　下載左個 ReactOS 嚟玩左一下，發覺佢已經可以跑起身，同個 Windows 2000 好鬼似。可以開一D類似於 FireFox 2.0 之類嘅軟件，只喺佢仲處於非常唔穩定嘅開發程度，經常郁下就死機藍屏。不過佢哋嘅開發進度好快，睇左下，平均每日有成十個修改提交，唔知幾時可以真正進入實用嘅階段呢，真喺好期待！&lt;/p&gt;
 &lt;p&gt;　　比較 Linux 同埋 ReactOS，我覺得 ReactOS 嘅理念會更有前景，畢竟好多公司或者家庭購買左嘅軟體硬體都只能用喺 Windows 上，如果可以直接轉到呢個 ReactOS 上，買左新機後，就可以慳翻筆買 OS 嘅錢，畢竟叫個個都轉到 Linux 底下確實系有難度，特別喺遇著好似我大姐夫D甘嘅人，用 Windows 只會點鼠標，又唔願學新嘢，叫佢去用 Linux 估計同儸佢條命差唔多……&lt;/p&gt;
 &lt;p&gt;　　Linux？唉，如果界面嘅易用性同埋速度可以提高上去，估計可以搶到 Windows 平台部分做開發嘅人員、願意嚐新的人同埋打算慳成本而進行平台轉換嘅團體。&lt;/p&gt;
-</summary></entry><entry><title>啓明星</title><link href="https://starofrainnight.club/cht/qi-ming-xing.html" rel="alternate"></link><updated>2008-10-12T23:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-10-12:cht/qi-ming-xing.html</id><summary type="html">&lt;p&gt;今日瀏覽網頁，無意中查左下啓明星，先知道，原來啓明星即系金星，亦系古時所講既「太白」或者「長庚」。傍晚出現時就稱之為「長庚」，清晨出現時稱「啟明」。其它既稱呼仲有：殷星，大正，營星，明星，觀星，大衣，大威，太（白＋皋），終星，大相，大囂，爽星，太皓，序星。&lt;/p&gt;
+</summary></entry><entry><title>啓明星</title><link href="https://starofrainnight.club/chs/qi-ming-xing.html" rel="alternate"></link><updated>2008-10-12T23:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-10-12:chs/qi-ming-xing.html</id><summary type="html">&lt;p&gt;今日瀏覽網頁，無意中查左下啓明星，先知道，原來啓明星即系金星，亦系古時所講既「太白」或者「長庚」。傍晚出現時就稱之為「長庚」，清晨出現時稱「啟明」。其它既稱呼仲有：殷星，大正，營星，明星，觀星，大衣，大威，太（白＋皋），終星，大相，大囂，爽星，太皓，序星。&lt;/p&gt;
 &lt;p&gt;可以通過維基百科查詢到更詳細的 &lt;a class="reference external" href="http://zh.wikipedia.org/w/index.php?title=%E9%87%91%E6%98%9F&amp;amp;variant=zh-hk"&gt;金星資料&lt;/a&gt;&lt;/p&gt;
-</summary></entry><entry><title>MinGW 下 編譯 wxSQLite</title><link href="https://starofrainnight.club/cht/mingw-xia-bian-yi-wxsqlite.html" rel="alternate"></link><updated>2008-06-23T15:44:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-23:cht/mingw-xia-bian-yi-wxsqlite.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary></entry><entry><title>MinGW 下 編譯 wxSQLite</title><link href="https://starofrainnight.club/chs/mingw-xia-bian-yi-wxsqlite.html" rel="alternate"></link><updated>2008-06-23T15:44:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-23:chs/mingw-xia-bian-yi-wxsqlite.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;初始條件&lt;/h2&gt;
 &lt;p&gt;首先確定環境變量只有 Mingw 的路徑而沒有 msys 的路徑，因為使用 msys 編譯會有些問題。&lt;/p&gt;
 &lt;/div&gt;
@@ -316,7 +398,7 @@ make -f makefile.gcc clean
 make -f makefile.gcc
 &lt;/pre&gt;
 &lt;/div&gt;
-</summary><category term="wxsqlite"></category><category term="mingw"></category></entry><entry><title>分佈式版本控制系統SVK搭配TortoiseSVN的使用</title><link href="https://starofrainnight.club/cht/fen-bu-shi-ban-ben-kong-zhi-xi-tong-svkda-pei-tortoisesvnde-shi-yong.html" rel="alternate"></link><updated>2008-06-19T23:27:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-19:cht/fen-bu-shi-ban-ben-kong-zhi-xi-tong-svkda-pei-tortoisesvnde-shi-yong.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="wxsqlite"></category><category term="mingw"></category></entry><entry><title>分佈式版本控制系統SVK搭配TortoiseSVN的使用</title><link href="https://starofrainnight.club/chs/fen-bu-shi-ban-ben-kong-zhi-xi-tong-svkda-pei-tortoisesvnde-shi-yong.html" rel="alternate"></link><updated>2008-06-19T23:27:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-19:chs/fen-bu-shi-ban-ben-kong-zhi-xi-tong-svkda-pei-tortoisesvnde-shi-yong.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;SVK與Linus所開發的Git相似，是一種分布式的版本控制系統，但它並不是完全從頭編寫的版本控制系統，而是基于 Subversion 的分布式的版本控制系统。如 CVS，Subversion 這些集中式管理系统存在对唯一的版本库过分依赖的缺陷：一旦不能正常连接到集中式的版本库，整个系统陷入瘫痪。分布式的版本控制系統最大的好處在于可以维护分布式的版本库，分散的开发人员可以通过 SVK 建立远程的 CVS，Subversion，P4 协议的版本库镜像，选择工作在自己合适的镜像版本库，这个镜像甚至可以是本地的，整个工作可以离线进行，然后在需要的时候同步镜像版本库到主版本库。&lt;/p&gt;
 &lt;/div&gt;
@@ -373,9 +455,9 @@ svk push //local/MyProject
 &lt;/pre&gt;
 &lt;p&gt;記得, 修改鏡像庫時, 必須且只能使用SVK的方法, 否則更新不能被更新到網絡版本庫!&lt;/p&gt;
 &lt;p&gt;各種關係及操作如下圖：&lt;/p&gt;
-&lt;img alt="" src="https://starofrainnight.club/cht/images/usingsvk.jpg" /&gt;
+&lt;img alt="" src="https://starofrainnight.club/chs/images/usingsvk.jpg" /&gt;
 &lt;/div&gt;
-</summary><category term="svk"></category><category term="svn"></category><category term="tortoisesvn"></category></entry><entry><title>MinGW 下編譯 gettext 0.17</title><link href="https://starofrainnight.club/cht/mingw-xia-bian-yi-gettext-017.html" rel="alternate"></link><updated>2008-06-17T07:33:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-17:cht/mingw-xia-bian-yi-gettext-017.html</id><summary type="html">&lt;p&gt;這兩天編譯gettext搞得焦頭爛額，機子裡裝了大量的開源工具，結果各種動態鏈接庫版本不一致，編譯工具不一致，導致編譯時老是不成功，後來乾脆寫個批處理，把 path 環境變量只設置為 mingw 及 msys 的Bin，把 include 中除 mingw 及 msys的路徑外（例如Gtk）全刪除，然後在Dos下使用以下的編譯命令一次編譯成功：&lt;/p&gt;
+</summary><category term="svk"></category><category term="svn"></category><category term="tortoisesvn"></category></entry><entry><title>MinGW 下編譯 gettext 0.17</title><link href="https://starofrainnight.club/chs/mingw-xia-bian-yi-gettext-017.html" rel="alternate"></link><updated>2008-06-17T07:33:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-17:chs/mingw-xia-bian-yi-gettext-017.html</id><summary type="html">&lt;p&gt;這兩天編譯gettext搞得焦頭爛額，機子裡裝了大量的開源工具，結果各種動態鏈接庫版本不一致，編譯工具不一致，導致編譯時老是不成功，後來乾脆寫個批處理，把 path 環境變量只設置為 mingw 及 msys 的Bin，把 include 中除 mingw 及 msys的路徑外（例如Gtk）全刪除，然後在Dos下使用以下的編譯命令一次編譯成功：&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 sh ./configure --enable-threads=win32 --with-libiconv-prefix=d:/sb/sdks/libiconv
 &lt;/pre&gt;
@@ -386,7 +468,7 @@ CFLAGS=-mno-cygwin -O2 -g -pipe -mthreads -fno-strict-aliasing
 CXXFLAGS=-mno-cygwin -O2 -g -pipe -mthreads -fno-strict-aliasing
 LDFLAG=-mno-cygwin
 &lt;/pre&gt;
-</summary><category term="mingw"></category></entry><entry><title>使用 OTL 連接 SQLite</title><link href="https://starofrainnight.club/cht/shi-yong-otl-lian-jie-sqlite.html" rel="alternate"></link><updated>2008-06-14T13:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-14:cht/shi-yong-otl-lian-jie-sqlite.html</id><summary type="html">&lt;p&gt;本文章假定妳熟悉SQLite數據庫，假定妳對OTL有 一定了解，假定妳所使用的操作系統為Windows平台。&lt;/p&gt;
+</summary><category term="mingw"></category></entry><entry><title>使用 OTL 連接 SQLite</title><link href="https://starofrainnight.club/chs/shi-yong-otl-lian-jie-sqlite.html" rel="alternate"></link><updated>2008-06-14T13:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-14:chs/shi-yong-otl-lian-jie-sqlite.html</id><summary type="html">&lt;p&gt;本文章假定妳熟悉SQLite數據庫，假定妳對OTL有 一定了解，假定妳所使用的操作系統為Windows平台。&lt;/p&gt;
 &lt;p&gt;OTL 採用的是ODBC數據源機制，到 &lt;a class="reference external" href="http://www.ch-werner.de/sqliteodbc/"&gt;http://www.ch-werner.de/sqliteodbc/&lt;/a&gt; 可下載到最新的SQLiteODBC數據源驅動。&lt;/p&gt;
 &lt;p&gt;假定你已經創建了一個名為 MyTestDB 的數據源連接到你的數據庫，數據庫中有一表 Users, 表中有字段 id 及 value，id 为整型，value為字符串50個字節。&lt;/p&gt;
 &lt;p&gt;代碼：&lt;/p&gt;
@@ -430,7 +512,7 @@ int main()
 　　return 0 ;
 }
 &lt;/pre&gt;
-</summary><category term="otl"></category><category term="sqlite"></category><category term="database"></category></entry><entry><title>數據包在互聯網</title><link href="https://starofrainnight.club/cht/shu-ju-bao-zai-hu-lian-wang.html" rel="alternate"></link><updated>2008-06-13T12:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-13:cht/shu-ju-bao-zai-hu-lian-wang.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="otl"></category><category term="sqlite"></category><category term="database"></category></entry><entry><title>數據包在互聯網</title><link href="https://starofrainnight.club/chs/shu-ju-bao-zai-hu-lian-wang.html" rel="alternate"></link><updated>2008-06-13T12:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-13:chs/shu-ju-bao-zai-hu-lian-wang.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;前言&lt;/h2&gt;
 &lt;p&gt;前段時間做一個NDIS網絡驅動，功能是修改IP包的IP地址并傳送到指定的機器，在測試時發現一個問題，假如在內網中傳送數據包到在內網的一台不同網域的機器上，數據包不能傳達，具體問題在[1]有詳細說明。在 Google查了很多數據，經過多次測試，最終發覺，原來是路由器（Router）的問題。在這過程中，發現很多網友對數據包在網絡上的傳輸有誤解，因此我想對這個問題進行一次詳細的說明，以備以后的不時之需。&lt;/p&gt;
 &lt;p&gt;網上有很多網友對以太網的理解是：數據包在互聯網是在IP層傳輸的，以IP地址來判斷地址并傳輸的。這是一個誤解，互聯網不認識IP協議層，只是由於現在有些寬帶運營商（ISP）使用了“釆用執行在協議層的路由器”，所以導致出現由於 IP不在該路由器所控制的范圍則自動被放棄，我們看見的就是不符合IP協議的均會被放棄。這種做法好處是避免了廣播風暴問題，但同時又削弱了互聯網的功能，例如我們就不能直接把一個不釆用IP協議的數據包傳輸至互聯網某一個物理地址（MAC地址，下同）的機器。&lt;/p&gt;
@@ -441,7 +523,7 @@ int main()
 &lt;div class="section" id="id3"&gt;
 &lt;h3&gt;2.1&amp;nbsp;&amp;nbsp;&amp;nbsp;以太交換機&lt;/h3&gt;
 &lt;p&gt;為了簡化模模型，我們先假設所有機器均以獨立IP連接到互聯網。（如圖）&lt;/p&gt;
-&lt;img alt="" class="align-center" src="https://starofrainnight.club/cht/images/data-on-network.png" /&gt;
+&lt;img alt="" class="align-center" src="https://starofrainnight.club/chs/images/data-on-network.png" /&gt;
 &lt;p&gt;以太網交換機處於的是數據鏈路層，它只處理以太網頭，也就是說它只認識數據包的物理地址，舊式的交換機的處理過程是：只要數據包在互聯網某一個點發出數據包，數據包在經過每一個交換機時，交換機自動把數據包向所有端口廣播，這樣，通過一個又一個交換機的廣播，終端機的機器判斷該數據包的物理地址是否自身的物理地址，是就通知上層數據包的到達，否則直接掉棄。這種處理方法，在小數據量時很有效，但當有大量數據傳輸時，就難以保證了，由於交換機不停地廣播數據包，就會致使網絡由於廣播的數據太多而癱瘓。這時人們就想出了辦法，就是物理地址查詢機制：每一個從交換機輸入端的經過的數據包源物理地址將被存儲起來，然后當有數據包來臨時，就向每個端口查詢是否存在該數據包的目的物理地址，如果存在，則直接把數據包傳送往該端口，如果都尋找不到，則廣播該數據包。這樣就有效地抑制了大部分的數據包廣播了。&lt;/p&gt;
 &lt;div class="section" id="id4"&gt;
 &lt;h4&gt;2.1.1&amp;nbsp;&amp;nbsp;&amp;nbsp;優點&lt;/h4&gt;
@@ -482,7 +564,7 @@ int main()
 &lt;p&gt;(1) 偽IP如何實現與客戶機進行TCP通訊？
 &lt;a class="reference external" href="http://starofrainnight.blogspot.com/2008/04/iptcp.html"&gt;http://starofrainnight.blogspot.com/2008/04/iptcp.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="network"></category></entry><entry><title>偽IP如何實現與客戶機進行TCP通訊？</title><link href="https://starofrainnight.club/cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html" rel="alternate"></link><updated>2008-04-05T11:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-04-05:cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="network"></category></entry><entry><title>偽IP如何實現與客戶機進行TCP通訊？</title><link href="https://starofrainnight.club/chs/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html" rel="alternate"></link><updated>2008-04-05T11:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-04-05:chs/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;軟件環境&lt;/h2&gt;
 &lt;p&gt;WinXP SP2&lt;/p&gt;
 &lt;p&gt;截取數據包的Ndis5.0驅動已經寫好。

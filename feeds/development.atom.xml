@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.club/cht/" rel="alternate"></link><link href="https://starofrainnight.club/cht/feeds/development.atom.xml" rel="self"></link><id>https://starofrainnight.club/cht/</id><updated>2012-10-11T11:37:00+08:00</updated><entry><title>ubifs 應用案例</title><link href="https://starofrainnight.club/cht/ubifs-ying-yong-an-li.html" rel="alternate"></link><updated>2012-10-11T11:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2012-10-11:cht/ubifs-ying-yong-an-li.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>StarOfRainNight's Home</title><link href="https://starofrainnight.club/chs/" rel="alternate"></link><link href="https://starofrainnight.club/chs/feeds/development.atom.xml" rel="self"></link><id>https://starofrainnight.club/chs/</id><updated>2012-10-11T11:37:00+08:00</updated><entry><title>ubifs 應用案例</title><link href="https://starofrainnight.club/chs/ubifs-ying-yong-an-li.html" rel="alternate"></link><updated>2012-10-11T11:37:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2012-10-11:chs/ubifs-ying-yong-an-li.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;1&amp;nbsp;&amp;nbsp;&amp;nbsp;環境&lt;/h2&gt;
 &lt;p&gt;CPU : Freescale MX27&lt;/p&gt;
 &lt;p&gt;NAND FLASH : Samsung K9F2G08U0B, 2Gbits = 256MB&lt;/p&gt;
@@ -138,7 +138,7 @@ UBI: max/mean erase counter: 1/0
 &lt;blockquote&gt;
 mtd分區不是 ubi 格式 或者 創建 ubi 鏡像時的 cfg 文件有誤.&lt;/blockquote&gt;
 &lt;/div&gt;
-</summary><category term="ubifs"></category><category term="freescale"></category><category term="mx27"></category></entry><entry><title>UDP下嘅實時音視頻傳輸機制</title><link href="https://starofrainnight.club/cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html" rel="alternate"></link><updated>2010-01-31T20:53:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-31:cht/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="ubifs"></category><category term="freescale"></category><category term="mx27"></category></entry><entry><title>UDP下嘅實時音視頻傳輸機制</title><link href="https://starofrainnight.club/chs/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html" rel="alternate"></link><updated>2010-01-31T20:53:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2010-01-31:chs/udpxia-kai-shi-shi-yin-shi-pin-chuan-shu-ji-zhi.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;前言&lt;/h2&gt;
 &lt;p&gt;經歷咗一兩年係項目當中嘅實時音視頻實踐, 覺得要實現好嘅實時音視頻傳輸實屬不易. 以下呢套UDP下嘅實現流程, 係血嘅經驗, 每一點都是來之不易.&lt;/p&gt;
 &lt;p&gt;全局要點: 視頻可跳, 但聲音不斷.&lt;/p&gt;
@@ -165,7 +165,7 @@ mtd分區不是 ubi 格式 或者 創建 ubi 鏡像時的 cfg 文件有誤.&lt;/
 &lt;h2&gt;注意&lt;/h2&gt;
 &lt;p&gt;上面缺了任何一點, 都會導致播放出現問題！&lt;/p&gt;
 &lt;/div&gt;
-</summary><category term="network"></category><category term="sip"></category><category term="rtp"></category></entry><entry><title>使用 OTL 連接 SQLite</title><link href="https://starofrainnight.club/cht/shi-yong-otl-lian-jie-sqlite.html" rel="alternate"></link><updated>2008-06-14T13:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-14:cht/shi-yong-otl-lian-jie-sqlite.html</id><summary type="html">&lt;p&gt;本文章假定妳熟悉SQLite數據庫，假定妳對OTL有 一定了解，假定妳所使用的操作系統為Windows平台。&lt;/p&gt;
+</summary><category term="network"></category><category term="sip"></category><category term="rtp"></category></entry><entry><title>使用 OTL 連接 SQLite</title><link href="https://starofrainnight.club/chs/shi-yong-otl-lian-jie-sqlite.html" rel="alternate"></link><updated>2008-06-14T13:56:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-06-14:chs/shi-yong-otl-lian-jie-sqlite.html</id><summary type="html">&lt;p&gt;本文章假定妳熟悉SQLite數據庫，假定妳對OTL有 一定了解，假定妳所使用的操作系統為Windows平台。&lt;/p&gt;
 &lt;p&gt;OTL 採用的是ODBC數據源機制，到 &lt;a class="reference external" href="http://www.ch-werner.de/sqliteodbc/"&gt;http://www.ch-werner.de/sqliteodbc/&lt;/a&gt; 可下載到最新的SQLiteODBC數據源驅動。&lt;/p&gt;
 &lt;p&gt;假定你已經創建了一個名為 MyTestDB 的數據源連接到你的數據庫，數據庫中有一表 Users, 表中有字段 id 及 value，id 为整型，value為字符串50個字節。&lt;/p&gt;
 &lt;p&gt;代碼：&lt;/p&gt;
@@ -209,7 +209,7 @@ int main()
 　　return 0 ;
 }
 &lt;/pre&gt;
-</summary><category term="otl"></category><category term="sqlite"></category><category term="database"></category></entry><entry><title>偽IP如何實現與客戶機進行TCP通訊？</title><link href="https://starofrainnight.club/cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html" rel="alternate"></link><updated>2008-04-05T11:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-04-05:cht/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
+</summary><category term="otl"></category><category term="sqlite"></category><category term="database"></category></entry><entry><title>偽IP如何實現與客戶機進行TCP通訊？</title><link href="https://starofrainnight.club/chs/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html" rel="alternate"></link><updated>2008-04-05T11:38:00+08:00</updated><author><name>starofrainnight</name></author><id>tag:starofrainnight.club,2008-04-05:chs/wei-ipru-he-shi-xian-yu-ke-hu-ji-jin-xing-tcptong-xun.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;軟件環境&lt;/h2&gt;
 &lt;p&gt;WinXP SP2&lt;/p&gt;
 &lt;p&gt;截取數據包的Ndis5.0驅動已經寫好。
