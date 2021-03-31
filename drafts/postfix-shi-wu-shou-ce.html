@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang=en> <head><meta charset=utf-8><title>使用 OTL 連接 SQLite</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content><meta name=author content=starofrainnight><!-- Le styles --><link rel=stylesheet href=https://sorn.taorules.com/chs/theme/css/bootstrap.dark.css type=text/css><link rel=stylesheet href=https://sorn.taorules.com/chs/theme/css/bootstrap.dark.font-awesome-fake.css type=text/css><style type=text/css>
+<!DOCTYPE html><html lang=en> <head><meta charset=utf-8><title>postfix 實務手冊</title><meta name=viewport content="width=device-width, initial-scale=1.0"><meta name=description content><meta name=author content=starofrainnight><!-- Le styles --><link rel=stylesheet href=https://sorn.taorules.com/chs/theme/css/bootstrap.dark.css type=text/css><link rel=stylesheet href=https://sorn.taorules.com/chs/theme/css/bootstrap.dark.font-awesome-fake.css type=text/css><style type=text/css>
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -22,46 +22,7 @@
 
     </style><link href=https://sorn.taorules.com/chs/theme/css/bootstrap-responsive.dark.css rel=stylesheet><link href=https://sorn.taorules.com/chs/theme/css/font-awesome-fake.css rel=stylesheet><link href=https://sorn.taorules.com/chs/theme/css/pygments.css rel=stylesheet><!-- Le HTML5 shim, for IE6-8 support of HTML5 elements --><!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><!-- Le fav and touch icons --><link rel="shortcut icon" href=https://sorn.taorules.com/chs/theme/images/favicon.ico><link rel=apple-touch-icon href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=72x72 href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=114x114 href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon-114x114.png><link href=https://sorn.taorules.com/chs/ type=application/atom+xml rel=alternate title="StarOfRainNight's Home ATOM Feed"></head> <body> <div class="navbar navbar-fixed-top"> <div class=navbar-inner> <div class=container-fluid> <a class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </a> <a class=brand href=https://sorn.taorules.com/chs/index.html>StarOfRainNight's Home</a> <div class=nav-collapse> <ul class=nav> <li class=divider-vertical></li> <ul class="nav pull-right"> <li><a href=https://sorn.taorules.com/chs/archives.html><i class=icon-th-list></i>Archives</a></li> </ul> </ul> <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>--> </div><!--/.nav-collapse --> </div> </div> </div> <div class=container-fluid> <div class=row> <div class=span9 id=content> <section id=content> <article> <header> <h1> <a href rel=bookmark title="Permalink to 使用 OTL 連接 SQLite"> 使用 OTL 連接 SQLite </a> </h1> </header> <div class=entry-content> <div class=well> <footer class=post-info> <span class=label>Date</span> <abbr class=published title=2008-06-14T13:56:00+08:00> 2008-06-14 13:56 </abbr> <span class=label>By</span> <a href=https://sorn.taorules.com/chs/author/starofrainnight.html>starofrainnight</a> <span class=label>Category</span> <a href=https://sorn.taorules.com/chs/category/development.html>development</a> <span class=label>Tags</span> <a href=https://sorn.taorules.com/chs/tag/otl.html>otl</a>&nbsp; <a href=https://sorn.taorules.com/chs/tag/sqlite.html>sqlite</a>&nbsp; <a href=https://sorn.taorules.com/chs/tag/database.html>database</a>&nbsp; </footer><!-- /.post-info --> </div> <p>本文章假定妳熟悉SQLite數據庫，假定妳對OTL有 一定了解，假定妳所使用的操作系統為Windows平台。</p> <p>OTL 採用的是ODBC數據源機制，到 <a href=http://www.ch-werner.de/sqliteodbc/ class="reference external">http://www.ch-werner.de/sqliteodbc/</a> 可下載到最新的SQLiteODBC數據源驅動。</p> <p>假定你已經創建了一個名為 MyTestDB 的數據源連接到你的數據庫，數據庫中有一表 Users, 表中有字段 id 及 value，id 为整型，value為字符串50個字節。</p> <p>代碼：</p> <pre class=literal-block>
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-
-#define OTL_ODBC
-#include &lt;otlv4.h&gt;
-
-otl_connect db; // Database connection
-
-void test_select( void )
-{
-
-　　otl_stream dbstream( 1 , &quot; select * from Users &quot; , db );
-　　int　　　　　Usersid;
-　　char　　　　 Usersvalue[ 50 ] = &quot;&quot; ;
-
-　　while ( !dbstream.eof() )
-　　{
-　　　　dbstream &gt;&gt; Usersid &gt;&gt; Usersvalue;
-　　　　std::cout
-　　　　　　&lt;&lt; &quot;Users.id : &quot; &lt;&lt; Usersid
-　　　　　　&lt;&lt; &quot;Users.value : &quot; &lt;&lt; Usersvalue &lt;&lt; std::endl;
-　　}
-}
-
-int main()
-{
-　　otl_connect::otl_initialize();
-
-　　db.rlogon( &quot;DSN=MyTestDB&quot; );
-　　if ( db.connected )
-　　{
-　　　　test_select();
-　　}
-　　db.logoff();
-
-　　system( &quot;PAUSE&quot; );
-　　return 0 ;
-}
-</pre> </div><!-- /.entry-content --> <div class=comments> <h2>Comments !</h2> <div id=disqus_thread></div> <script>
+    <![endif]--><!-- Le fav and touch icons --><link rel="shortcut icon" href=https://sorn.taorules.com/chs/theme/images/favicon.ico><link rel=apple-touch-icon href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=72x72 href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon-72x72.png><link rel=apple-touch-icon sizes=114x114 href=https://sorn.taorules.com/chs/theme/images/apple-touch-icon-114x114.png><link href=https://sorn.taorules.com/chs/ type=application/atom+xml rel=alternate title="StarOfRainNight's Home ATOM Feed"></head> <body> <div class="navbar navbar-fixed-top"> <div class=navbar-inner> <div class=container-fluid> <a class="btn btn-navbar" data-toggle=collapse data-target=.nav-collapse> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </a> <a class=brand href=https://sorn.taorules.com/chs/index.html>StarOfRainNight's Home</a> <div class=nav-collapse> <ul class=nav> <li class=divider-vertical></li> <ul class="nav pull-right"> <li><a href=https://sorn.taorules.com/chs/archives.html><i class=icon-th-list></i>Archives</a></li> </ul> </ul> <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>--> </div><!--/.nav-collapse --> </div> </div> </div> <div class=container-fluid> <div class=row> <div class=span9 id=content> <section id=content> <article> <header> <h1> <a href rel=bookmark title="Permalink to postfix 實務手冊"> postfix 實務手冊 </a> </h1> </header> <div class=entry-content> <div class=well> <footer class=post-info> <span class=label>Date</span> <abbr class=published title=9999-12-31T23:59:59.999999+08:06> 9999-12-31 23:59 </abbr> <span class=label>By</span> <a href=https://sorn.taorules.com/chs/author/starofrainnight.html>starofrainnight</a> <span class=label>Category</span> <a href=https://sorn.taorules.com/chs/category/201407121225-postfixshi-wu-shou-ce.html>201407121225-postfix實務手冊</a> </footer><!-- /.post-info --> </div> <body dir=auto> <h2 class=section id=magicparlabel-2><span class=section_label>1</span> 前言</h2> <div class=standard id=magicparlabel-3>每一個郵件系統都可以使用不用的軟件組合，不同的操作系統實現。我們選擇的是開源的方案，基於以下操作系統及軟件：</div> <div class=standard id=magicparlabel-4>操作系統選擇 CentOS 7</div> <div class=standard id=magicparlabel-5>smtp 服務器選擇 postfix</div> <div class=standard id=magicparlabel-6>imap 及 pop3 服務器選擇 dovecot</div> <div class=standard id=magicparlabel-7>用戶認證採用 sasl</div> <div class=standard id=magicparlabel-8>簡易安裝使用</div> <div class=standard id=magicparlabel-9>在CentOS 6.5 中，直接 service postfix start 即可</div> <div class=standard id=magicparlabel-10>postfix 安裝</div> <div class=standard id=magicparlabel-11>http://wiki.centos.org/zh-tw/HowTos/postfix</div> <div class=standard id=magicparlabel-12>http://wiki.centos.org/zh-tw/HowTos/postfix_sasl</div> <div class=standard id=magicparlabel-13>centos 6.5</div> <div class=standard id=magicparlabel-14>service postfix start 出現 postfix: fatal: parameter inet_interfaces: no local interface found for ::1 我們沒有這個 ipv6 支持, 需要修改 /etc/postfix/main.cf 文件相應的參數</div> <div class=standard id=magicparlabel-15>http://forums.opensuse.org/showthread.php/436441-Postfix-error-message</div> <div class=standard id=magicparlabel-16>http://www.162cm.com/archives/1336.html</div> <div class=standard id=magicparlabel-17>i solved this by setting in /etc/postfix/main.cf</div> <div class=standard id=magicparlabel-18>inet_protocols = ipv4 inet_interfaces = all </div> <div class=standard id=magicparlabel-19>postfix 是 smtp 支持軟件</div> <div class=standard id=magicparlabel-20>dovecot 是 imap 及 pop3 支持軟件</div> <div class=standard id=magicparlabel-21>虛擬用戶支持</div> <div class=standard id=magicparlabel-22>http://www.gretheer.com/2013/06/64-centos-linux-postfix.html</div> <div class=standard id=magicparlabel-23>通過 extman 支持</div> <div class=standard id=magicparlabel-24>http://www.jcwledu.com/edu/view.asp?newsid=2164</div> <div class=standard id=magicparlabel-25>dovecot</div> <div class=standard id=magicparlabel-26>dovecot 經常自殺的原因</div> <div class=standard id=magicparlabel-27>http://www.cnblogs.com/kentyshang/archive/2008/11/04/1326561.html</div> </body> </div><!-- /.entry-content --> <div class=comments> <h2>Comments !</h2> <div id=disqus_thread></div> <script>
                         /**
                          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
